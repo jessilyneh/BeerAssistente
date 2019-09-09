@@ -34,7 +34,7 @@ public class CervejaServices {
         LOGGER.info("Fazer Match de cerveja e playlist");
         ResponseEntity<CervejaResponse> response;
         Cerveja cerveja = cervejaServices.getCervejaPerfeita (medidortemp);
-        BeerPlaylist beerPlaylist = SpotifyServices.BeerPlaylist(cerveja.getTipoCerveja());
+        BeerPlaylist beerPlaylist = SpotifyServices.BeerPlaylist (cerveja.getTipoCerveja());
         CervejaResponse cervejaResponse = new CervejaResponse(cerveja.getTipoCerveja(),beerPlaylist);
         LOGGER.info(cervejaResponse.toString());
         if (beerPlaylist != null) {
